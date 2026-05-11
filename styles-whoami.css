@@ -1,0 +1,232 @@
+/* ======================
+   ABOUT PAGE — DESKTOP & MOBILE
+   ====================== */
+
+/* --- Custom fonts (kept from original) --- */
+@font-face {
+  font-family: 'Damn';
+  src: url('https://static1.squarespace.com/static/67979e7bf6b3e437c1733abe/t/68e9196cf65a8d5ecb849ff1/1760106860943/DAMN.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PP Formula';
+  src: url('https://static1.squarespace.com/static/67979e7bf6b3e437c1733abe/t/68ef9a2d3685dd7f066ba2b3/1760533037695/PPFormula-NarrowRegular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* --- Reset --- */
+* { box-sizing: border-box; }
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin: 0;
+}
+html {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #fff;
+  font-family: "PP Formula", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden; /* no desktop scroll */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* center logo + columns as one block */
+}
+
+/* Hide Squarespace header/footer (if present) */
+header, footer,
+.Header, .Footer,
+.sqs-header, .sqs-footer,
+#header, #footer,
+.site-header, .site-header-wrapper,
+.site-footer-wrapper {
+  display: none !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
+}
+
+/* Remove mobile tap highlight */
+a, button, label { -webkit-tap-highlight-color: transparent; outline: none; }
+
+/* ======================
+   Logo / top link
+   ====================== */
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 0 0 1.5rem 0;
+  z-index: 10;
+}
+.logo-wrapper a { text-decoration: none; color: inherit; }
+.logo-wrapper .go-back { font-size: 0.9rem; letter-spacing: 0.08em; }
+
+/* ======================
+   Main content wrapper — 3 columns
+   ====================== */
+.about-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 5%;
+  padding: 0 6%;
+  height: 75vh;                    /* fixed height so columns can use height: 100% */
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Columns — base widths */
+.about-left,
+.about-center,
+.about-right {
+  flex-basis: 28%;
+  display: flex;
+  flex-direction: column;
+  /* ensure each column fills wrapper height so vertical centering works */
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* LEFT & RIGHT: center their *content* both vertically and horizontally */
+.about-left,
+.about-right {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0;
+}
+
+/* CENTER: keep items stacked, image first */
+.about-center {
+  flex-basis: 30%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0;
+}
+
+/* Column content element (used on each column's inner container) */
+.about-column {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main image + button */
+.main-image {
+  width: 75%;
+  height: auto;
+  margin-bottom: 20px;
+  object-fit: contain;
+  display: block;
+}
+.resume-btn {
+  display: inline-block;
+  padding: 0.7em 1.3em;
+  background: #000;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "PP Formula", sans-serif;
+  font-size: 0.95vw;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+.resume-btn:hover { opacity: 0.85; }
+
+/* Social icons */
+.social-icons {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.social-icons a {
+  color: #000;
+  font-size: 2vw;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.social-icons a:hover { transform: scale(1.08); color: #555; }
+
+/* Headings & text */
+.about-left h1,
+.about-right h1 {
+  font-family: 'Damn', "PP Formula", sans-serif;
+  text-transform: uppercase;
+  font-size: 4vw;
+  letter-spacing: 0.05em;
+  margin: 0 0 0 0;
+}
+
+/* use a class .meta for the smaller lines (replaces invalid <p1>) */
+.meta {
+  font-family: "PP Formula", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+  margin: 0.35rem 0;
+}
+
+/* Prevent vertical/rotated text */
+.about-left, .about-right, .about-left h1, .about-right h1 {
+  writing-mode: horizontal-tb;
+  transform: none;
+  white-space: normal;
+  text-align: center;
+}
+
+/* ======================
+   MOBILE
+   ====================== */
+@media (max-width: 768px) {
+  html, body { overflow-y: auto; height: auto; } /* mobile scroll */
+
+  .about-wrapper {
+    flex-direction: column;
+    flex: none;
+    height: auto;
+    gap: 6vh;
+    padding: 0 8vw max(4rem, env(safe-area-inset-bottom));
+  }
+
+  .about-column {
+    flex-basis: auto;
+    width: 100%;
+    padding: 0 0;
+    margin: 0 auto;
+  }
+
+  .logo-wrapper { padding: max(20px, env(safe-area-inset-top)) 0 40px; }
+  .logo-wrapper .go-back { font-size: 1rem; }
+
+  .main-image { width: 80%; margin-bottom: 20px; }
+  .resume-btn { font-size: 3.2vw; padding: 0.9em 2em; }
+
+  .about-left h1, .about-right h1 { font-size: 15vw; margin-top: 0; }
+  .meta { font-size: 4vw; line-height: 1.3; text-align: center; }
+
+  /* stacking order on mobile — center image first */
+  .about-center { order: 1; }
+  .about-left { order: 2; }
+  .about-right { order: 3; }
+
+  .social-icons a { font-size: 6vw; gap: 20px; }
+}
+
+/* small screens / very narrow: clamp font sizes to avoid overflow */
+@media (max-width: 420px) {
+  .about-left h1, .about-right h1 { font-size: 12vw; }
+}

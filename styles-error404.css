@@ -1,0 +1,103 @@
+@font-face {
+font-family: 'Damn';
+src: url('[https://static1.squarespace.com/static/67979e7bf6b3e437c1733abe/t/68e9196cf65a8d5ecb849ff1/1760106860943/DAMN.ttf](https://static1.squarespace.com/static/67979e7bf6b3e437c1733abe/t/68e9196cf65a8d5ecb849ff1/1760106860943/DAMN.ttf)') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+font-family: 'PP Formula';
+src: url('[https://static1.squarespace.com/static/67979e7bf6b3e437c1733abe/t/68ef9a2d3685dd7f066ba2b3/1760533037695/PPFormula-NarrowRegular.otf](https://static1.squarespace.com/static/67979e7bf6b3e437c1733abe/t/68ef9a2d3685dd7f066ba2b3/1760533037695/PPFormula-NarrowRegular.otf)') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin: 0;
+}
+
+/* --- Reset & Layout --- */
+
+* { box-sizing: border-box; }
+  html, body {
+  margin: 0;
+  padding-top: 5vh;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "PP Formula", sans-serif;
+  text-align: center;
+  overflow: hidden;
+  }
+
+/* Hide Squarespace elements if present */
+header, footer,
+.Header, .Footer,
+.sqs-header, .sqs-footer,
+#header, #footer,
+.site-header, .site-header-wrapper,
+.site-footer-wrapper {
+display: none !important;
+}
+
+/* --- 404 Text --- */
+.big-404 {
+font-family: 'Damn', sans-serif;
+font-size: 18vw;
+letter-spacing: 0.02em;
+line-height: 1;
+text-transform: uppercase;
+margin: 0;
+color: #000;
+}
+
+/* --- Description Text --- */
+.description {
+max-width: 600px;
+margin: 2rem auto 3rem auto;
+font-family: "PP Formula", sans-serif;
+font-size: 1rem;
+line-height: 1.5rem;
+color: #000;
+}
+
+.description p {
+margin: 0.6rem 0;
+}
+
+/* --- Go Home Button --- */
+.go-home {
+display: inline-block;
+padding: 0.8em 2em;
+background: #000;
+color: #fff;
+text-transform: uppercase;
+font-family: "PP Formula", sans-serif;
+font-size: 0.95rem;
+letter-spacing: 0.05em;
+text-decoration: none;
+transition: opacity 0.2s ease;
+}
+
+.go-home:hover {
+opacity: 0.8;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+html, body { overflow-y: auto; }
+.big-404 { font-size: 30vw; }
+.description {
+font-size: 4vw;
+line-height: 1.4;
+max-width: 90%;
+}
+.go-home {
+font-size: 4vw;
+padding: 1em 2.5em;
+}
+}

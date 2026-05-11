@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Title — Portfolio</title>
+  <link rel="stylesheet" href="styles-project.css" />
+</head>
+<body id="top">
+
+  <!-- ============================================== -->
+  <!-- HEADER (logo only, scrolls away with the page) -->
+  <!-- ============================================== -->
+  <header class="topbar">
+    <a href="vascorcunha-home.html" class="logo" aria-label="Home">
+  <img src="images/Logo-White.svg" alt="Logo" />
+</a>
+    <!-- Replace the "V" above with an <img> later, e.g.:
+         <a href="index.html" class="logo"><img src="logo.svg" alt="Logo"></a> -->
+  </header>
+
+  <!-- ============================================== -->
+  <!-- HERO: full-screen image, gradient, headline    -->
+  <!-- ============================================== -->
+  <section class="hero">
+    <!-- Replace the file paths below with your own media.
+         The browser uses the FIRST source it understands, so put
+         the smaller WebM first and MP4 as the fallback.
+         The poster image shows while the video loads. -->
+    <img class="hero-bg" src="images/lifesavingcup-2.jpg" alt="Hero image" />
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-headline">LIFE-SAVING-CUP</h1>
+        <div class="hero-meta">
+          <span class="hero-tag">EL OJO</span>
+          <span class="hero-year">2024</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- PROJECT INFO: two columns                      -->
+  <!-- Left  = description (left-aligned)             -->
+  <!-- Right = PDF link + credits (right-aligned)     -->
+  <!-- On mobile, right column appears first.         -->
+  <!-- ============================================== -->
+  <section class="project-info">
+    <div class="info-container">
+
+      <div class="info-left">
+        <p>
+          For many refugees, crossing the Mediterranean is a matter of life and death. For tourists, it's a holiday destination. This campaign bridges that gap by getting people to do what they do anyway: drink.
+        </p>
+        <p>
+          The idea: Every reusable cup served at bars and clubs donates €0.50 to SMH (Salvamento Marítimo Humanitário), funding sea rescue missions in the Mediterranean. Bars already charge €1 for reusable cups that cost €0.20 to produce, the margin does the work, while businesses benefit from tax incentives.
+        </p>
+        <ul class="info-list">
+          <li>Just by drinking from this cup, you've already donated.</li>
+          <li>· The cup itself - the medium is the message;</li>
+          <li>· Bars & clubs' social media - organic reach through partner venues;</li>
+          <li>· A live website - a filling cup tracks progress toward the €100,000 goal in real time;</li>
+        </ul>
+        <p>
+            A toast to life. Turning the most ordinary summer gesture into an act of solidarity.
+        </p>
+      </div>
+
+      <div class="info-right">
+        <div class="credits">
+          <p>Art Direction - Vasco R. Cunha</p>
+          <p>Copywriter - Manuel Stock</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- IMAGE GRID                                     -->
+  <!-- Add class="span-two" on <a> to make image      -->
+  <!-- span 2 columns.                                -->
+  <!-- ============================================== -->
+  <section class="grid-section">
+    <div class="image-grid">
+
+      <a href="#img1" class="span-full">
+        <img src="images/lifesavingcup-1.webp" alt="Image 1" />
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- BACK TO TOP                                    -->
+  <!-- ============================================== -->
+  <div class="back-to-top">
+    <a href="#top" class="back-to-top-btn">
+      <span class="arrow">↑</span>
+      <span>Back to top</span>
+    </a>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- LIGHTBOX OVERLAYS (one per image)              -->
+  <!-- Pure CSS using :target                         -->
+  <!-- ============================================== -->
+  <div id="img1" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/lifesavingcup-1.webp" alt="Image 1 fullscreen" />
+  </div>
+
+
+  <script src="js-project.js"></script>
+</body>
+</html>

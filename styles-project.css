@@ -1,0 +1,686 @@
+/* ==================================================================
+   PROJECT PAGE — DEFAULT LAYOUT
+   ==================================================================
+   This stylesheet is divided into clearly labelled sections.
+   Things you will most likely want to change per project are at
+   the very top, in the :root block (the "CUSTOMISE PER PROJECT"
+   section). Everything else can stay as-is.
+   ================================================================== */
+
+
+/* ==================================================================
+   1. CUSTOMISE PER PROJECT
+   ==================================================================
+   Change these values to update colours and grid layout for each
+   new project page. You don't need to touch anything else below.
+   ================================================================== */
+:root {
+  /* Background colour shown after the hero (description section)  */
+  --project-bg:        #f3efe7;
+
+  /* Text colour used on the project background                     */
+  --project-text:      #111111;
+
+  /* Background colour for the IMAGE GRID section                   */
+  --grid-bg:           #1a1a1a;
+
+  /* Text/icon colour for the BACK TO TOP button when on grid bg    */
+  --grid-text:         #ffffff;
+
+  /* Number of columns the image grid uses ON DESKTOP               */
+  /* (mobile is always 2 columns — see media query below)           */
+  --grid-columns:      3;
+
+  /* Gap between images in the grid                                  */
+  --grid-gap:          20px;
+
+  /* Safe horizontal padding from screen edge for content sections  */
+  --edge-padding:      8vw;
+}
+
+
+/* ==================================================================
+   2. FONTS
+   ==================================================================
+   DAMN is loaded from your existing Squarespace URL.
+   PP Formula Condensed Extralight — TODO: paste your own URL/file
+   in the @font-face block below. Until then, the page falls back
+   to a system condensed-light font so you can preview the layout.
+   ================================================================== */
+@font-face {
+  font-family: 'Damn';
+  src: url('fonts/DAMN.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Formula Condensed';
+  src: url('fonts/PPFormula-CondensedExtralight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Formula Condensed';
+  src: url('fonts/PPFormula-CondensedLightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Formula Condensed';
+  src: url('fonts/PPFormula-CondensedBlack.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ==================================================================
+   3. RESET & BASE
+   ================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  background: var(--project-bg);
+  color: var(--project-text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+/* Turn OFF the default bold on every heading so the type
+   designer's weight (e.g. DAMN regular) is what shows.          */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin: 0;
+}
+
+p { margin: 0 0 1em; }
+
+a { color: inherit; }
+
+
+/* ==================================================================
+   4. HEADER (logo only — NOT sticky, scrolls away with the page)
+   ================================================================== */
+.topbar {
+  position: absolute;   /* sits at the top of the page, scrolls with it */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;   /* centre the logo */
+  align-items: center;
+  padding: 24px 20px;
+  pointer-events: none;       /* let clicks pass through except on logo */
+}
+
+.topbar .logo {
+  pointer-events: auto;
+  display: inline-block;
+  font-family: 'Damn', sans-serif;
+  font-size: 40px;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  color: #ffffff;            /* white so it shows on the dark hero  */
+  text-transform: uppercase;
+  user-select: none;
+}
+
+/* When the logo is an <img> rather than text, size it here.       */
+.topbar .logo img {
+  display: block;
+  height: 100px;              /* ← logo height on desktop            */
+  width: auto;               /* keeps your aspect ratio             */
+}
+
+
+/* ==================================================================
+   5. HERO SECTION
+   ================================================================== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Dark gradient: stronger at the very top + very bottom,
+   transparent in the middle so the image stays visible.         */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 30%),
+    linear-gradient(to top,    rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 35%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;          /* sit at the BOTTOM of the hero  */
+  justify-content: center;        /* still centered horizontally    */
+  text-align: center;
+  color: #ffffff;
+  padding: 0 5vw 7vh;             /* 7vh safe space below the text  */
+}
+
+/* Wrapper sized to its widest child (the headline). The meta
+   row below it inherits this width, so "School project" and
+   "2022" sit exactly on the headline's left/right edges.         */
+.hero-text {
+  display: inline-block;
+}
+
+.hero-headline {
+  font-family: 'Damn', sans-serif;
+  font-size: clamp(3rem, 9vw, 9rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0;
+  cursor: pointer;            /* signals it's clickable             */
+  user-select: none;          /* avoids text-selection on tap       */
+}
+
+/* Award badge above the headline (silver / gold / bronze).
+   Same typography as .hero-meta. A shine sweeps across for
+   ~0.5s every 5s.                                              */
+.hero-award {
+  display: block;
+  font-family: 'PP Formula Condensed', sans-serif;
+  font-weight: 200;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin: 0 0 5px 0;          /* tiny gap above the headline   */
+
+  background-size: 250% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: award-shine 5s linear infinite;
+}
+
+.hero-award.default {
+  color: #FFFFFF;
+  -webkit-text-fill-color: #FFFFFF;   /* override the transparent fill */
+  background: none;                    /* remove the silver/gold gradient */
+  animation: none;                     /* stop the shine sweep */
+}
+
+.hero-award.silver {
+  background-image: linear-gradient(
+    100deg,
+    #9C9C9C 0%, #9C9C9C 35%,
+    #FFFFFF 50%,
+    #9C9C9C 65%, #9C9C9C 100%
+  );
+}
+
+.hero-award.gold {
+  background-image: linear-gradient(
+    100deg,
+    #D4AF37 0%, #D4AF37 35%,
+    #FFFCD9 50%,
+    #D4AF37 65%, #D4AF37 100%
+  );
+}
+
+.hero-award.bronze {
+  background-image: linear-gradient(
+    100deg,
+    #B87333 0%, #B87333 35%,
+    #F4C2A1 50%,
+    #B87333 65%, #B87333 100%
+  );
+}
+
+@keyframes award-shine {
+  0%   { background-position: 100% 0; }
+  10%  { background-position: -100% 0; }   /* shine completes at 0.5s */
+  100% { background-position: -100% 0; }   /* stays still for 4.5s   */
+}
+
+.hero-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;                /* matches the headline's width    */
+  margin-top: 5px;            /* ← gap below the headline (desktop) */
+  font-family: 'PP Formula Condensed', sans-serif;
+  font-weight: 200;
+  font-size: clamp(0.9rem, 1.4vw, 1.25rem);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+
+/* ==================================================================
+   6. PROJECT INFO — two columns
+   ================================================================== */
+.project-info {
+  width: 100%;
+  padding: 120px var(--edge-padding);
+  background: var(--project-bg);
+  color: var(--project-text);
+}
+
+.info-container {
+  display: flex;
+  gap: 6vw;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.info-left {
+  flex: 1 1 0;
+  text-align: left;
+  font-size: 1.05rem;
+}
+
+/* Bullet-point list inside the description column.
+   Same line-height as the body text — items just get a marker.   */
+.info-left .info-list {
+  list-style: none;            /* turn off default bullets         */
+  padding: 0;
+  margin: 0 0 1em;             /* same bottom space as a <p>       */
+}
+.info-left .info-list li {
+  margin: 0;                   /* lines hug each other naturally   */
+}
+
+.info-right {
+  flex: 1 1 0;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.pdf-link {
+  font-family: 'PP Formula Condensed', sans-serif;
+  font-weight: 200;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 4px;
+  margin-bottom: 32px;
+  transition: opacity 200ms ease;
+}
+
+.pdf-link:hover {
+  opacity: 0.6;
+}
+
+.credits {
+  font-family: 'PP Formula Condensed', sans-serif;
+  font-weight: 200;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  opacity: 0.75;
+}
+
+.credits p {
+  margin: 0 0 4px;
+}
+
+
+/* ==================================================================
+   7. IMAGE GRID SECTION
+   ================================================================== */
+.grid-section {
+  width: 100%;
+  background: var(--grid-bg);
+  padding: var(--grid-gap);
+}
+
+/* Flexbox (not CSS grid) so that an incomplete last row CENTERS
+   horizontally instead of hanging to the left.                  */
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;     /* ← NEW: keeps items at natural height */
+  gap: var(--grid-gap);
+  width: 100%;
+}
+
+.image-grid a {
+  /* Width of one column = (100% − total gap space) ÷ N columns   */
+  flex: 0 0 calc(
+    (100% - (var(--grid-columns) - 1) * var(--grid-gap))
+    / var(--grid-columns)
+  );
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  position: relative;
+  background: #2a2a2a;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+}
+
+.image-grid a img,
+.image-grid a video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 400ms ease;
+  pointer-events: none;        /* lets the parent <a> catch the tap  */
+}
+
+.image-grid a:hover img,
+.image-grid a:hover video {
+  transform: scale(1.03);
+}
+
+/* span-two = 2 columns wide + the gap between them              */
+.image-grid .span-two {
+  flex: 0 0 calc(
+    2 * (100% - (var(--grid-columns) - 1) * var(--grid-gap))
+    / var(--grid-columns)
+    + var(--grid-gap)
+  );
+  aspect-ratio: 2 / 1;
+}
+
+/* span-tall: 1 column wide × ~2 rows tall — for vertical/reel videos.
+   Use class="span-tall" on the <a> wrapping a vertical video.       */
+.image-grid .span-tall {
+  /* width inherited from .image-grid a (one column wide)             */
+  aspect-ratio: 1 / 2;
+}
+
+/* span-full: full grid width.
+   Video stretches to fill the box with object-fit: cover,
+   and any cropping is centered (equal top/bottom, equal sides). */
+.image-grid .span-full {
+  flex: 0 0 100%;
+  /* Box keeps its inherited 1:1 ratio. Change to 16/9 or 2/1
+     if you want a different box shape:
+     aspect-ratio: 16 / 9;                                       */
+}
+.image-grid .span-full img,
+.image-grid .span-full video {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block;
+}
+
+/* fill-row: applied by JS to items that end up ALONE on a row.
+   They stretch to the full grid width and use a 2:1 ratio so
+   they don't become awkwardly tall.                             */
+.image-grid .fill-row {
+  flex: 0 0 100%;
+  aspect-ratio: 2 / 1;
+}
+
+/* fill-column: applied by JS to normal items sharing a row with a
+   span-tall. They stretch to 2 rows tall to match it.              */
+.image-grid .fill-column {
+  aspect-ratio: 1 / 2;
+}
+
+
+/* ==================================================================
+   8. BACK TO TOP — its OWN section, separate from the image grid
+   ================================================================== */
+.back-to-top {
+  background: var(--project-bg);   /* its own background colour    */
+  color: var(--project-text);
+  display: flex;
+  justify-content: center;
+  padding: 30px var(--edge-padding) 30px;
+}
+
+.back-to-top-btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-family: 'PP Formula Condensed', sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.95rem;
+  color: var(--project-text);
+  text-decoration: none;
+  transition: opacity 200ms ease;
+}
+
+.back-to-top-btn:hover {
+  opacity: 0.6;
+}
+
+.back-to-top-btn .arrow {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+
+/* ==================================================================
+   9. LIGHTBOX (CSS-only, opens with :target)
+   ================================================================== */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 250ms ease;
+  z-index: 1000;
+  padding: 40px;
+}
+
+.popup-overlay:target,
+.popup-overlay.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.popup-overlay img,
+.popup-overlay video {
+  max-width: 95%;
+  max-height: 95%;
+  object-fit: contain;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  background: #000;            /* black bars look intentional       */
+}
+
+/* PDF viewer overlay — uses an iframe instead of an image */
+.popup-pdf iframe {
+  width: 90vw;
+  max-width: 1000px;
+  height: 90vh;
+  border: none;
+  background: #ffffff;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 768px) {
+  .popup-pdf iframe {
+    width: 95vw;
+    height: 92vh;
+  }
+}
+
+.popup-overlay .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-size: 28px;
+  color: #ffffff;
+  text-decoration: none;
+  background: none;
+  border: none;
+  line-height: 1;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-family: sans-serif;
+}
+
+/* Prev / next arrows inside the image lightbox                    */
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  background: rgba(0, 0, 0, 0.35);
+  border: none;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 36px;
+  font-family: sans-serif;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 200ms ease, opacity 200ms ease;
+  user-select: none;
+}
+.lightbox-nav:hover {
+  background: rgba(0, 0, 0, 0.65);
+}
+.lightbox-nav.prev { left: 24px; }
+.lightbox-nav.next { right: 24px; }
+
+/* Hide nav arrows inside the PDF viewer (only one PDF, no cycle) */
+.popup-pdf .lightbox-nav { display: none; }
+
+@media (max-width: 768px) {
+  .lightbox-nav {
+    width: 44px;
+    height: 44px;
+    font-size: 28px;
+  }
+  .lightbox-nav.prev { left: 10px; }
+  .lightbox-nav.next { right: 10px; }
+}
+
+
+/* ==================================================================
+   10. RESPONSIVE — MOBILE (≤ 768px)
+   ================================================================== */
+@media (max-width: 768px) {
+
+  /* Header: slightly smaller logo on mobile                       */
+  .topbar {
+    padding: 18px 20px;
+  }
+  .topbar .logo {
+    font-size: 30px;
+  }
+  .topbar .logo img {
+    height: 80px;            /* ← logo height on mobile             */
+  }
+
+  /* Hero: scale headline based on viewport width                  */
+  .hero-headline {
+    font-size: 14vw;
+  }
+  
+  .hero-award {
+    font-size: 3.2vw;
+    margin-bottom: 3px;
+  }
+
+  .hero-meta {
+    font-size: 3.2vw;
+    margin-top: 5px;          /* ← gap below the headline (mobile)  */
+  }
+
+  /* Project info section                                          */
+  .project-info {
+    padding: 80px 6vw;
+  }
+
+  /* Stack columns AND reverse the order                           */
+  .info-container {
+    flex-direction: column;
+    gap: 48px;
+  }
+  .info-right {
+    order: 1;          /* appears FIRST on mobile                   */
+    width: 100%;
+    text-align: left;       /* left-align on mobile                 */
+    align-items: flex-start;
+  }
+  .info-left {
+    order: 2;          /* appears SECOND on mobile                  */
+    width: 100%;
+  }
+
+  /* Image grid — 2 columns on mobile                              */
+  .image-grid a {
+    flex: 0 0 calc((100% - var(--grid-gap)) / 2);
+  }
+  /* span-two items take the full row width on mobile              */
+  .image-grid .span-two {
+    flex: 0 0 100%;
+    aspect-ratio: 2 / 1;
+  }
+
+  /* Back to top — slightly tighter spacing                        */
+  .back-to-top {
+    padding: 20px 6vw 20px;
+  }
+}
+
+
+/* ==================================================================
+   11. ACCESSIBILITY — focus styles
+   ================================================================== */
+a:focus-visible,
+.close-btn:focus-visible,
+.logo:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}

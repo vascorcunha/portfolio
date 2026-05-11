@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Title — Portfolio</title>
+  <link rel="stylesheet" href="styles-project.css" />
+</head>
+<body id="top">
+
+  <!-- ============================================== -->
+  <!-- HEADER (logo only, scrolls away with the page) -->
+  <!-- ============================================== -->
+  <header class="topbar">
+    <a href="vascorcunha-home.html" class="logo" aria-label="Home">
+  <img src="images/Logo-White.svg" alt="Logo" />
+</a>
+    <!-- Replace the "V" above with an <img> later, e.g.:
+         <a href="index.html" class="logo"><img src="logo.svg" alt="Logo"></a> -->
+  </header>
+
+  <!-- ============================================== -->
+  <!-- HERO: full-screen image, gradient, headline    -->
+  <!-- ============================================== -->
+  <section class="hero">
+    <!-- Replace the file paths below with your own media.
+         The browser uses the FIRST source it understands, so put
+         the smaller WebM first and MP4 as the fallback.
+         The poster image shows while the video loads. -->
+    <video
+      class="hero-bg"
+      autoplay
+      loop
+      muted
+      playsinline
+      poster="images/hero-poster.jpg">
+      <source src="images/h3francesinha-1.mp4"  type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-headline">H3 FRANCESINHA</h1>
+        <div class="hero-meta">
+          <span class="hero-tag">H3</span>
+          <span class="hero-year">2024</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- PROJECT INFO: two columns                      -->
+  <!-- Left  = description (left-aligned)             -->
+  <!-- Right = PDF link + credits (right-aligned)     -->
+  <!-- On mobile, right column appears first.         -->
+  <!-- ============================================== -->
+  <section class="project-info">
+    <div class="info-container">
+
+      <div class="info-left">
+        <p>
+          The francesinha is sacred in Portugal. Everyone has an opinion, nobody agrees, and H3 just entered the debate.
+        </p>
+        <p>
+          To launch its new Francesinha Burger, H3 went straight to the source: placing playful, provocative posters outside some of Portugal's most iconic francesinha restaurants, directly referencing them by name.
+        </p>
+        <p>
+            The Idea: A campaign built on rivalry and national pride, reigniting the age-old argument about Portugal's favourite dish, with H3 confidently throwing its hat in the ring.
+        </p>
+        <ul class="info-list">
+          <li>· Outdoor - cheeky posters planted at the doorsteps of legendary francesinha spots</li>
+          <li>· Social media - videos, vox pops, challenges, and giveaways to fuel the conversation online</li>
+        </ul>
+        <p>Bold, local, and deliberately divisive, in the best way.</p>
+      </div>
+
+      <div class="info-right">
+        <div class="credits">
+          <p>Art Direction - Vasco R. Cunha</p>
+          <p>Copywriter - Manuel Stock</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- IMAGE GRID                                     -->
+  <!-- Add class="span-two" on <a> to make image      -->
+  <!-- span 2 columns.                                -->
+  <!-- ============================================== -->
+  <section class="grid-section">
+    <div class="image-grid">
+      <a href="#vid1" class="span-tall">
+        <video autoplay loop muted playsinline>
+          <source src="images/h3francesinha-13.mp4" type="video/mp4" />
+        </video>
+      </a>
+      <a href="#vid2" class="span-tall">
+        <video autoplay loop muted playsinline>
+          <source src="images/h3francesinha-14.mp4" type="video/mp4" />
+        </video>
+      </a>
+
+      <a href="#img1">
+        <img src="images/h3francesinha-2.webp" alt="Image 1" />
+      </a>
+
+      <a href="#img2">
+        <img src="images/h3francesinha-3.webp" alt="Image 2" />
+      </a>
+
+      <a href="#img3">
+        <img src="images/h3francesinha-4.webp" alt="Image 3" />
+      </a>
+
+      <a href="#img4">
+        <img src="images/h3francesinha-5.webp" alt="Image 4" />
+      </a>
+
+      <a href="#img5">
+        <img src="images/h3francesinha-6.webp" alt="Image 5" />
+      </a>
+      <a href="#img6">
+        <img src="images/h3francesinha-7.webp" alt="Image 6" />
+      </a>
+      <a href="#img7">
+        <img src="images/h3francesinha-8.webp" alt="Image 7" />
+      </a>
+      <a href="#img8">
+        <img src="images/h3francesinha-9.webp" alt="Image 8" />
+      </a>
+      <a href="#img9">
+        <img src="images/h3francesinha-10.webp" alt="Image 9" />
+      </a>
+      <a href="#img10">
+        <img src="images/h3francesinha-11.webp" alt="Image 10" />
+      </a>
+      <a href="#img11">
+        <img src="images/h3francesinha-12.webp" alt="Image 11" />
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- BACK TO TOP                                    -->
+  <!-- ============================================== -->
+  <div class="back-to-top">
+    <a href="#top" class="back-to-top-btn">
+      <span class="arrow">↑</span>
+      <span>Back to top</span>
+    </a>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- LIGHTBOX OVERLAYS (one per image)              -->
+  <!-- Pure CSS using :target                         -->
+  <!-- ============================================== -->
+  <div id="vid1" class="popup-overlay">
+        <a href="#" class="close-btn" aria-label="Close">✕</a>
+        <video controls playsinline>
+            <source src="images/h3francesinha-13.mp4" type="video/mp4" />
+        </video>
+    </div>
+    <div id="vid2" class="popup-overlay">
+        <a href="#" class="close-btn" aria-label="Close">✕</a>
+        <video controls playsinline>
+            <source src="images/h3francesinha-14.mp4" type="video/mp4" />
+        </video>
+    </div>
+  <div id="img1" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/h3francesinha-2.webp" alt="Image 1 fullscreen" />
+  </div>
+  <div id="img2" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/h3francesinha-3.webp" alt="Image 2 fullscreen" />
+  </div>
+  <div id="img3" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/h3francesinha-4.webp" alt="Image 3 fullscreen" />
+  </div>
+  <div id="img4" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/h3francesinha-5.webp" alt="Image 4 fullscreen" />
+  </div>
+  <div id="img5" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/h3francesinha-6.webp" alt="Image 5 fullscreen" />
+  </div>
+  <div id="img6" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/h3francesinha-7.webp" alt="Image 6 fullscreen" />
+  </div>
+  <div id="img7" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/h3francesinha-8.webp" alt="Image 7 fullscreen" />
+  </div>
+  <div id="img8" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/h3francesinha-9.webp" alt="Image 8 fullscreen" />
+  </div>
+  <div id="img9" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/h3francesinha-10.webp" alt="Image 9 fullscreen" />
+  </div>
+  <div id="img10" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/h3francesinha-11.webp" alt="Image 10 fullscreen" />
+  </div>
+  <div id="img11" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/h3francesinha-12.webp" alt="Image 11 fullscreen" />
+  </div>
+
+  <script src="js-project.js"></script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+/* ============================================================
+   FONTS
+   ============================================================ */
+@font-face {
+  font-family: 'Damn';
+  src: url('https://static1.squarespace.com/static/67979e7bf6b3e437c1733abe/t/68e9196cf65a8d5ecb849ff1/1760106860943/DAMN.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'PP Formula';
+  src: url('https://static1.squarespace.com/static/67979e7bf6b3e437c1733abe/t/68ef9a2d3685dd7f066ba2b3/1760533037695/PPFormula-NarrowRegular.otf') format('opentype');
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+a, button {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+/* ============================================================
+   PAGE LAYOUT
+   ============================================================ */
+.page-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.page-header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 1rem 5rem 40px;
+  background: #fff;
+  z-index: 10;
+}
+
+.header-title {
+  font-family: 'Damn', sans-serif;
+  font-size: 50px;
+  letter-spacing: 0.02em;
+  margin: 0;
+  white-space: nowrap;
+  justify-self: start;
+}
+
+.header-logo-link {
+  display: inline-block;
+  position: relative;
+  justify-self: center;
+}
+
+.header-logo {
+  display: block;
+  width: 80px;
+  max-width: 10vw;
+  height: auto;
+}
+
+.header-logo-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.header-logo-link:hover::after { opacity: 1; }
+
+/* ============================================================
+   FILTERS
+   ============================================================ */
+.header-filters {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-self: end;
+}
+
+.filter-btn {
+  font-family: 'PP Formula', sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #000;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.filter-btn:hover { opacity: 0.85; }
+.filter-btn.is-active { opacity: 1; }
+
+/* ============================================================
+   PHOTO GRID
+   ============================================================ */
+.photo-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-content: start;
+  gap: 3px;
+  padding-bottom: 3px;
+}
+
+.photo-grid a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  position: relative;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.album-large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.photo-img-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.photo-img-wrap img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Large albums: image fills the box minus caption space */
+.album-large .photo-img-wrap {
+  height: calc(100% - 38px);
+}
+
+.album-large .photo-img-wrap img {
+  position: absolute;
+  inset: 0;
+}
+
+/* GIF overlay on hover */
+.photo-img-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--gif);
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.photo-grid a:hover .photo-img-wrap::after { opacity: 1; }
+
+/* Caption */
+.photo-caption {
+  display: block;
+  padding: 8px 2px;
+  font-family: 'PP Formula', sans-serif;
+  font-size: 13px;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+  opacity: 0.75;
+  transition: opacity 0.3s ease;
+}
+
+.photo-grid a:hover .photo-caption { opacity: 1; }
+
+.caption-type {
+  opacity: 0.4;
+  margin-left: 4px;
+}
+
+/* ============================================================
+   FILTER LOGIC
+   When a specific filter is active, .photo-grid gets
+   `.filter-active`, and matching albums get `.is-match`.
+   Non-matching albums are dimmed.
+   ============================================================ */
+.photo-grid.filter-active a:not(.is-match) {
+  opacity: 0.6;
+  filter: grayscale(100%);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .page-header {
+    padding: 65px 15px 20px;
+  }
+  .header-title {
+    font-size: 30px;
+  }
+  .header-logo {
+    width: 56px;
+    max-width: 14vw;
+  }
+  .header-filters {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: start;
+    gap: 10px 12px;
+  }
+  .filter-btn {
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+    text-align: left;
+  }
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .photo-caption { font-size: 11px; }
+  .album-large { grid-row: span 1; }
+  .album-large .photo-img-wrap { height: auto; }
+  .album-large .photo-img-wrap img { position: static; height: auto; }
+}

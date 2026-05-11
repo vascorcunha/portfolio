@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Title — Portfolio</title>
+  <link rel="stylesheet" href="styles-project.css" />
+</head>
+<body id="top">
+
+  <!-- ============================================== -->
+  <!-- HEADER (logo only, scrolls away with the page) -->
+  <!-- ============================================== -->
+  <header class="topbar">
+    <a href="vascorcunha-home.html" class="logo" aria-label="Home">
+  <img src="images/Logo-White.svg" alt="Logo" />
+</a>
+    <!-- Replace the "V" above with an <img> later, e.g.:
+         <a href="index.html" class="logo"><img src="logo.svg" alt="Logo"></a> -->
+  </header>
+
+  <!-- ============================================== -->
+  <!-- HERO: full-screen image, gradient, headline    -->
+  <!-- ============================================== -->
+  <section class="hero">
+    <!-- Replace the file paths below with your own media.
+         The browser uses the FIRST source it understands, so put
+         the smaller WebM first and MP4 as the fallback.
+         The poster image shows while the video loads. -->
+    <video
+      class="hero-bg"
+      autoplay
+      loop
+      muted
+      playsinline
+      poster="images/hero-poster.jpg">
+      <source src="images/Fueltv-loop.mp4"  type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-headline">FUEL TV</h1>
+        <div class="hero-meta">
+          <span class="hero-tag">School project</span>
+          <span class="hero-year">2020</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- PROJECT INFO: two columns                      -->
+  <!-- Left  = description (left-aligned)             -->
+  <!-- Right = PDF link + credits (right-aligned)     -->
+  <!-- On mobile, right column appears first.         -->
+  <!-- ============================================== -->
+  <section class="project-info">
+    <div class="info-container">
+
+      <div class="info-left">
+        <p>
+          FUEL TV was one of the world's top radical sports channels; a Portuguese network broadcasting skateboarding, surfing, motocross, snowboarding, and more. Launched in 2008, it built a global following but gradually faded from public consciousness.
+        </p>
+        <p>
+          As a project, I took on a short-term re-brand, not a full overhaul, but a cycle-break to refresh the channel's identity while preserving what made it iconic: its collaborations with artists worldwide.
+        </p>
+        <p>
+            The visual direction leans into bright colours and childish cartoons — bold and playful, but not naïve. Think Adult Swim. The goal was something instantly recognisable, versatile across formats, and fun to engage with.
+        </p>
+        <ul class="info-list">
+            <li>The project culminated in three videos as part of the class brief:</li>
+            <li>· Identity slide - communicating the refreshed brand;</li>
+            <li>· Continuation slide - maintaining visual flow;</li>
+            <li>· Program slide - applied to channel programming;</li>
+        </ul>
+      </div>
+
+      <div class="info-right">
+        <div class="credits">
+          <p>Research - Vasco R. Cunha</p>
+          <p>Art Direction - Vasco R. Cunha</p>
+          <p>Animation / Motion - Vasco R. Cunha</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- IMAGE GRID                                     -->
+  <!-- Add class="span-two" on <a> to make image      -->
+  <!-- span 2 columns.                                -->
+  <!-- ============================================== -->
+  <section class="grid-section">
+    <div class="image-grid">
+        <a href="#vid1" class="span-full">
+            <video autoplay loop muted playsinline>
+                <source src="images/Fueltv-6.mp4" type="video/mp4" />
+            </video>
+        </a>
+        <a href="#vid2" class="span-full">
+            <video autoplay loop muted playsinline>
+                <source src="images/Fueltv-7.mp4" type="video/mp4" />
+            </video>
+        </a>
+        <a href="#vid3" class="span-full">
+            <video autoplay loop muted playsinline>
+                <source src="images/Fueltv-8.mp4" type="video/mp4" />
+            </video>
+        </a>
+
+      <a href="#img1" >
+        <img src="images/Fueltv-1.png" alt="Image 1" />
+      </a>
+
+      <a href="#img2" class="span-two">
+        <img src="images/Fueltv-2.png" alt="Image 2" />
+      </a>
+
+      <a href="#img3">
+        <img src="images/Fueltv-3.png" alt="Image 3" />
+      </a>
+
+      <a href="#img4">
+        <img src="images/Fueltv-4.png" alt="Image 4" />
+      </a>
+
+      <a href="#img5">
+        <img src="images/Fueltv-5.png" alt="Image 5" />
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- BACK TO TOP                                    -->
+  <!-- ============================================== -->
+  <div class="back-to-top">
+    <a href="#top" class="back-to-top-btn">
+      <span class="arrow">↑</span>
+      <span>Back to top</span>
+    </a>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- LIGHTBOX OVERLAYS (one per image)              -->
+  <!-- Pure CSS using :target                         -->
+  <!-- ============================================== -->
+   <div id="vid1" class="popup-overlay">
+        <a href="#" class="close-btn" aria-label="Close">✕</a>
+        <video controls playsinline>
+            <source src="images/Fueltv-6.mp4" type="video/mp4" />
+        </video>
+    </div>
+    <div id="vid2" class="popup-overlay">
+        <a href="#" class="close-btn" aria-label="Close">✕</a>
+        <video controls playsinline>
+            <source src="images/Fueltv-7.mp4" type="video/mp4" />
+        </video>
+    </div>
+    <div id="vid3" class="popup-overlay">
+        <a href="#" class="close-btn" aria-label="Close">✕</a>
+        <video controls playsinline>
+            <source src="images/Fueltv-8.mp4" type="video/mp4" />
+        </video>
+    </div>
+  <div id="img1" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/Fueltv-1.png" alt="Image 1 fullscreen" />
+  </div>
+  <div id="img2" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/Fueltv-2.png" alt="Image 2 fullscreen" />
+  </div>
+  <div id="img3" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/Fueltv-3.png" alt="Image 3 fullscreen" />
+  </div>
+  <div id="img4" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/Fueltv-4.png" alt="Image 4 fullscreen" />
+  </div>
+  <div id="img5" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/Fueltv-5.png" alt="Image 5 fullscreen" />
+  </div>
+
+  <script src="js-project.js"></script>
+</body>
+</html>

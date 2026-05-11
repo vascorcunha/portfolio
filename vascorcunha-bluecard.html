@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Title — Portfolio</title>
+  <link rel="stylesheet" href="styles-project.css" />
+</head>
+<body id="top">
+
+  <!-- ============================================== -->
+  <!-- HEADER (logo only, scrolls away with the page) -->
+  <!-- ============================================== -->
+  <header class="topbar">
+    <a href="vascorcunha-home.html" class="logo" aria-label="Home">
+  <img src="images/Logo-White.svg" alt="Logo" />
+</a>
+    <!-- Replace the "V" above with an <img> later, e.g.:
+         <a href="index.html" class="logo"><img src="logo.svg" alt="Logo"></a> -->
+  </header>
+
+  <!-- ============================================== -->
+  <!-- HERO: full-screen image, gradient, headline    -->
+  <!-- ============================================== -->
+  <section class="hero">
+    <!-- Replace the file paths below with your own media.
+         The browser uses the FIRST source it understands, so put
+         the smaller WebM first and MP4 as the fallback.
+         The poster image shows while the video loads. -->
+    <img class="hero-bg" src="images/bluecard-3.webp" alt="Hero image" />
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-award default">YOUNG LIONS 2023</div>
+        <h1 class="hero-headline">BLUE CARD</h1>
+        <div class="hero-meta">
+          <span class="hero-tag">BETCLIC</span>
+          <span class="hero-year">2024</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- PROJECT INFO: two columns                      -->
+  <!-- Left  = description (left-aligned)             -->
+  <!-- Right = PDF link + credits (right-aligned)     -->
+  <!-- On mobile, right column appears first.         -->
+  <!-- ============================================== -->
+  <section class="project-info">
+    <div class="info-container">
+
+      <div class="info-left">
+        <p>
+          The Portuguese football league is one of Europe's slowest, with effective playing time barely reaching half a match, largely thanks to some of the world's most skilled anti-play performers.
+        </p>
+        <p>
+          Days before the brief was issued, FIFA banned the blue card, a futsal tool used to penalise exactly that behaviour. Betclic took the cue: if referees can't show it, the fans will.
+        </p>
+        <p>
+            The Idea: The Blue Card becomes a symbol of fan defiance, a way to challenge Portuguese football's culture of time-wasting, handed directly to the people in the stands.
+        </p>
+        <ul class="info-list">
+          <li>Distributed across press and outdoor touchpoints timed to match days:</li>
+          <li>· Sports newspapers - reaching fans before kick-off;</li>
+          <li>· Public transport - cards in hand on the way to the stadium;</li>
+          <li>· Digital billboards (MUPIs) - placed near stadiums for maximum impact;</li>
+        </ul>
+        <p>
+            A bold, culturally loaded idea that turned a regulatory moment into a fan movement, and put Betclic at the centre of the conversation.
+        </p>
+      </div>
+
+      <div class="info-right">
+        <div class="credits">
+          <p>Art Direction - Vasco R. Cunha</p>
+          <p>Copywriter - Manuel Stock</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- IMAGE GRID                                     -->
+  <!-- Add class="span-two" on <a> to make image      -->
+  <!-- span 2 columns.                                -->
+  <!-- ============================================== -->
+  <section class="grid-section">
+    <div class="image-grid">
+
+      <a href="#img1" class="span-full">
+        <img src="images/bluecard-1.webp" alt="Image 1" />
+      </a>
+
+      <a href="#img2">
+        <img src="images/bluecard-2.gif" alt="Image 2" />
+      </a>
+
+      <a href="#img3">
+        <img src="images/bluecard-3.webp" alt="Image 3" />
+      </a>
+
+      <a href="#img4">
+        <img src="images/bluecard-4.webp" alt="Image 4" />
+      </a>
+
+      <a href="#img5">
+        <img src="images/bluecard-5.webp" alt="Image 5" />
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- BACK TO TOP                                    -->
+  <!-- ============================================== -->
+  <div class="back-to-top">
+    <a href="#top" class="back-to-top-btn">
+      <span class="arrow">↑</span>
+      <span>Back to top</span>
+    </a>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- LIGHTBOX OVERLAYS (one per image)              -->
+  <!-- Pure CSS using :target                         -->
+  <!-- ============================================== -->
+  <div id="img1" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/bluecard-1.webp" alt="Image 1 fullscreen" />
+  </div>
+  <div id="img2" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/bluecard-2.gif" alt="Image 2 fullscreen" />
+  </div>
+  <div id="img3" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/bluecard-3.webp" alt="Image 3 fullscreen" />
+  </div>
+  <div id="img4" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/bluecard-4.webp" alt="Image 4 fullscreen" />
+  </div>
+  <div id="img5" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/bluecard-5.webp" alt="Image 5 fullscreen" />
+  </div>
+
+  <script src="js-project.js"></script>
+</body>
+</html>

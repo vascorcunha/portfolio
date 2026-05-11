@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Title — Portfolio</title>
+  <link rel="stylesheet" href="styles-project.css" />
+</head>
+<body id="top">
+
+  <!-- ============================================== -->
+  <!-- HEADER (logo only, scrolls away with the page) -->
+  <!-- ============================================== -->
+  <header class="topbar">
+    <a href="vascorcunha-home.html" class="logo" aria-label="Home">
+  <img src="images/Logo-White.svg" alt="Logo" />
+</a>
+    <!-- Replace the "V" above with an <img> later, e.g.:
+         <a href="index.html" class="logo"><img src="logo.svg" alt="Logo"></a> -->
+  </header>
+
+  <!-- ============================================== -->
+  <!-- HERO: full-screen image, gradient, headline    -->
+  <!-- ============================================== -->
+  <section class="hero">
+    <!-- Replace the file paths below with your own media.
+         The browser uses the FIRST source it understands, so put
+         the smaller WebM first and MP4 as the fallback.
+         The poster image shows while the video loads. -->
+    <video
+      class="hero-bg"
+      autoplay
+      loop
+      muted
+      playsinline
+      poster="images/hero-poster.jpg">
+      <source src="images/sabado20-8.mp4"  type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-headline">20 YEARS SABADO</h1>
+        <div class="hero-meta">
+          <span class="hero-tag">SÁBADO</span>
+          <span class="hero-year">2023</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- PROJECT INFO: two columns                      -->
+  <!-- Left  = description (left-aligned)             -->
+  <!-- Right = PDF link + credits (right-aligned)     -->
+  <!-- On mobile, right column appears first.         -->
+  <!-- ============================================== -->
+  <section class="project-info">
+    <div class="info-container">
+
+      <div class="info-left">
+        <p>
+          For its twentieth anniversary, SÁBADO wanted to celebrate its history and milestones by highlighting the wide range of topics it has covered over the years.
+        </p>
+      </div>
+
+      <div class="info-right">
+        <div class="credits">
+          <p>Art Direction - Vasco R. Cunha</p>
+          <p>Copywriter - Manuel Stock</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- IMAGE GRID                                     -->
+  <!-- Add class="span-two" on <a> to make image      -->
+  <!-- span 2 columns.                                -->
+  <!-- ============================================== -->
+  <section class="grid-section">
+    <div class="image-grid">
+
+      <a href="#img1" class="span-full">
+        <img src="images/sabado20-1.webp" alt="Image 1" />
+      </a>
+
+      <a href="#img2">
+        <img src="images/sabado20-2.webp" alt="Image 2" />
+      </a>
+
+      <a href="#img3">
+        <img src="images/sabado20-3.webp" alt="Image 3" />
+      </a>
+
+      <a href="#img4">
+        <img src="images/sabado20-4.webp" alt="Image 4" />
+      </a>
+
+      <a href="#img5">
+        <img src="images/sabado20-5.webp" alt="Image 5" />
+      </a>
+      <a href="#img6">
+        <img src="images/sabado20-6.webp" alt="Image 6" />
+      </a>
+      <a href="#img7">
+        <img src="images/sabado20-7.webp" alt="Image 7" />
+      </a>
+
+
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- BACK TO TOP                                    -->
+  <!-- ============================================== -->
+  <div class="back-to-top">
+    <a href="#top" class="back-to-top-btn">
+      <span class="arrow">↑</span>
+      <span>Back to top</span>
+    </a>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- LIGHTBOX OVERLAYS (one per image)              -->
+  <!-- Pure CSS using :target                         -->
+  <!-- ============================================== -->
+  <div id="img1" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/sabado20-1.webp" alt="Image 1 fullscreen" />
+  </div>
+  <div id="img2" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/sabado20-2.webp" alt="Image 2 fullscreen" />
+  </div>
+  <div id="img3" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/sabado20-3.webp" alt="Image 3 fullscreen" />
+  </div>
+  <div id="img4" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/sabado20-4.webp" alt="Image 4 fullscreen" />
+  </div>
+  <div id="img5" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/sabado20-5.webp" alt="Image 5 fullscreen" />
+  </div>
+  <div id="img6" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/sabado20-6.webp" alt="Image 6 fullscreen" />
+  </div>
+  <div id="img7" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/sabado20-7.webp" alt="Image 7 fullscreen" />
+  </div>
+
+  <script src="js-project.js"></script>
+</body>
+</html>
