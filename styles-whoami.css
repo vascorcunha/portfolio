@@ -209,19 +209,23 @@ a, button, label { -webkit-tap-highlight-color: transparent; outline: none; }
     margin: 0 auto;
   }
 
-  .logo-wrapper { padding: max(20px, env(safe-area-inset-top)) 0 40px; }
+  .logo-wrapper { padding: max(80px, env(safe-area-inset-top)) 0 10px; }
   .logo-wrapper .go-back { font-size: 1rem; }
 
-  .main-image { width: 80%; margin-bottom: 20px; }
+  .main-image { width: 80%; margin-bottom: 10px; }
   .resume-btn { font-size: 3.2vw; padding: 0.9em 2em; }
 
   .about-left h1, .about-right h1 { font-size: 15vw; margin-top: 0; }
   .meta { font-size: 4vw; line-height: 1.3; text-align: center; }
 
-  /* stacking order on mobile — center image first */
-  .about-center { order: 1; }
-  .about-left { order: 2; }
+
+  .about-center {
+    order: 1;
+    min-height: 76vh;   
+  }
+  .about-left  { order: 2; }
   .about-right { order: 3; }
+
 
   .social-icons a { font-size: 6vw; gap: 20px; }
 }
