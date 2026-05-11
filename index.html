@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>V — Creative & Photography</title>
+  <link rel="stylesheet" href="styles-home.css">
+</head>
+<body data-state="home">
+
+  <!-- ============================================================
+       LOADING SCREEN
+       ============================================================ -->
+  <div class="loading-screen" id="loadingScreen" aria-hidden="true">
+    <span class="loading-screen__text">Full screen for better experience</span>
+  </div>
+
+  <!-- ============================================================
+       MENU
+       ============================================================ -->
+  <main class="menu-wrapper" role="main">
+
+    <!-- Centre block: Creative · Logo · Photography -->
+    <nav class="menu-block" aria-label="Primary">
+
+      <!-- Left arrow → opens Creative -->
+      <button
+        type="button"
+        class="arrow-label arrow-label--creative"
+        data-action="open"
+        data-target="creative"
+        aria-label="Open Creative section">
+      </button>
+
+      <!-- Creative word -->
+      <span class="menu-word menu-word--creative">
+        <button
+          type="button"
+          class="menu-word__action menu-word__action--open"
+          data-action="open"
+          data-target="creative"
+          aria-label="Open Creative section">
+        </button>
+        <button
+          type="button"
+          class="menu-word__action menu-word__action--back"
+          data-action="home"
+          aria-label="Back to home">
+        </button>
+        <h1>Creative</h1>
+      </span>
+
+      <!-- Logo -->
+      <a href="vascorcunha-whoami.html" class="menu-logo-link" aria-label="Who am I">
+        <img class="menu-logo"
+             src="images/Logo-Black.svg"
+             alt="V Logo">
+      </a>
+
+      <!-- Photography word -->
+      <span class="menu-word menu-word--photography">
+        <button
+          type="button"
+          class="menu-word__action menu-word__action--open"
+          data-action="open"
+          data-target="photography"
+          aria-label="Open Photography section">
+        </button>
+        <button
+          type="button"
+          class="menu-word__action menu-word__action--back"
+          data-action="home"
+          aria-label="Back to home">
+        </button>
+        <h1>Photography</h1>
+      </span>
+
+      <!-- Right arrow → opens Photography -->
+      <button
+        type="button"
+        class="arrow-label arrow-label--photography"
+        data-action="open"
+        data-target="photography"
+        aria-label="Open Photography section">
+      </button>
+    </nav>
+
+    <!-- Click-anywhere-to-go-home overlay (only active when a panel is open) -->
+    <button
+      type="button"
+      class="menu-return"
+      data-action="home"
+      aria-label="Close panel and return home"
+      tabindex="-1">
+    </button>
+
+    <!-- ============================================================
+         CREATIVE GRID
+         ============================================================ -->
+    <section class="menu-creative-grid" id="creativePanel" aria-label="Creative projects" aria-hidden="true">
+      <a href="vascorcunha-h3fit.html">
+        <div class="creative-img-wrap"
+             data-gif="images/anim-h3fit.gif">
+          <img alt=""
+               data-src="images/anim-h3fit.gif">
+        </div>
+        <div class="creative-hover-text">H3 Fit · H3 · 2025</div>
+        <div class="photo-caption">
+          <span class="caption-name">H3 Fit</span>
+          <span class="caption-type">&nbsp;· H3 · 2025</span>
+          <span class="caption-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="vascorcunha-bestoutdoor.html">
+        <div class="creative-img-wrap"
+             data-gif="images/anim-bestoutdoor.gif">
+          <img alt=""
+               data-src="images/anim-bestoutdoor.gif">
+        </div>
+        <div class="creative-hover-text">Best Outdoor Network · MOP · 2025</div>
+        <div class="photo-caption">
+          <span class="caption-name">Best Outdoor Network</span>
+          <span class="caption-type">&nbsp;· MOP · 2025</span>
+          <span class="caption-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="vascorcunha-accidentallaunch.html">
+        <div class="creative-img-wrap"
+             data-gif="images/anim-accidentallaunch.gif">
+          <img alt=""
+               data-src="images/anim-accidentallaunch.gif">
+        </div>
+        <div class="creative-hover-text">Accidental Launch · SÁBADO · 2025</div>
+        <div class="photo-caption">
+          <span class="caption-name">Accidental Launch</span>
+          <span class="caption-type">&nbsp;· SÁBADO · 2025</span>
+          <span class="caption-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="vascorcunha-lifesavingcup.html">
+        <div class="creative-img-wrap"
+             data-gif="images/lifesavingcup-2.jpg">
+          <img alt=""
+               data-src="images/lifesavingcup-2.jpg">
+        </div>
+        <div class="creative-hover-text">Life-Saving Cup · SMH · Eurobest · 2024</div>
+        <div class="photo-caption">
+          <span class="caption-name">Life-Saving Cup</span>
+          <span class="caption-type">&nbsp;· SMH · 2024</span>
+          <span class="caption-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="vascorcunha-h3francesinha.html">
+        <div class="creative-img-wrap"
+             data-gif="images/anim-h3francesinha.gif">
+          <img alt=""
+               data-src="images/anim-h3francesinha.gif">
+        </div>
+        <div class="creative-hover-text">Francesinha · H3 · 2024</div>
+        <div class="photo-caption">
+          <span class="caption-name">Francesinha</span>
+          <span class="caption-type">&nbsp;· H3 · 2024</span>
+          <span class="caption-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="vascorcunha-bluecard.html">
+        <div class="creative-img-wrap"
+             data-gif="images/anim-bluecard.gif">
+          <img alt=""
+               data-src="images/anim-bluecard.gif">
+        </div>
+        <div class="creative-hover-text">The Blue Card · Betclic · Young Lions PT · 2024</div>
+        <div class="photo-caption">
+          <span class="caption-name">The Blue Card</span>
+          <span class="caption-type">&nbsp;· Betclic · 2024</span>
+          <span class="caption-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="vascorcunha-sabado20years.html">
+        <div class="creative-img-wrap"
+             data-gif="images/anim-sabado20.gif">
+          <img alt=""
+               data-src="images/anim-sabado20.gif">
+        </div>
+        <div class="creative-hover-text">20 Years · SÁBADO · 2024</div>
+        <div class="photo-caption">
+          <span class="caption-name">20 Years</span>
+          <span class="caption-type">&nbsp;· SÁBADO · 2024</span>
+          <span class="caption-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="vascorcunha-meoarena.html">
+        <div class="creative-img-wrap"
+             data-gif="images/anim-meoarena.gif">
+          <img alt=""
+               data-src="images/anim-meoarena.gif">
+        </div>
+        <div class="creative-hover-text">MEO Arena · MEO · 2023</div>
+        <div class="photo-caption">
+          <span class="caption-name">MEO Arena</span>
+          <span class="caption-type">&nbsp;· MEO · 2023</span>
+          <span class="caption-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="vascorcunha-schoolproject-mmh.html">
+        <div class="creative-img-wrap"
+             data-gif="images/anim-mmh.gif">
+          <img alt=""
+               data-src="images/anim-mmh.gif">
+        </div>
+        <div class="creative-hover-text">Men's Mental Health · School · 2022</div>
+        <div class="photo-caption">
+          <span class="caption-name">Men's Mental Health</span>
+          <span class="caption-type">&nbsp;· School · 2022</span>
+          <span class="caption-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="vascorcunha-schoolproject-fueltv.html">
+        <div class="creative-img-wrap"
+             data-gif="images/anim-fueltv.gif">
+          <img alt=""
+               data-src="images/anim-fueltv.gif">
+        </div>
+        <div class="creative-hover-text">Fuel TV · School · 2021</div>
+        <div class="photo-caption">
+          <span class="caption-name">Fuel TV</span>
+          <span class="caption-type">&nbsp;· School · 2021</span>
+          <span class="caption-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="vascorcunha-playlist.html">
+        <div class="creative-img-wrap"
+             data-gif="images/anim-playlistcovers.gif">
+          <img alt=""
+               data-src="images/anim-playlistcovers.gif">
+        </div>
+        <div class="creative-hover-text">Playlist Covers · Personal · 2018</div>
+        <div class="photo-caption">
+          <span class="caption-name">Playlist Covers</span>
+          <span class="caption-type">&nbsp;· Personal · 2018</span>
+          <span class="caption-arrow">→</span>
+        </div>
+      </a>
+    </section>
+
+    <!-- ============================================================
+         PHOTOGRAPHY GRID
+         ============================================================ -->
+    <section class="menu-photography-grid" id="photographyPanel" aria-label="Photography albums" aria-hidden="true">
+      <a href="https://vascorcunhaphotography8919.pixieset.com/filmphotography/">
+        <div class="photo-img-wrap"
+             data-gif="events/anim-topfilm.gif">
+          <img alt=""
+               data-src="https://static1.squarespace.com/static/67979e7bf6b3e437c1733abe/t/69174b68800a46486a03a916/1763134315921/VRC-Top+Analog-27.jpg">
+        </div>
+        <div class="photo-caption">
+          <span class="caption-name">Best of Film Photography</span>
+          <span class="caption-type">&nbsp;- Album</span>
+          <span class="caption-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="vascorcunha-events.html">
+        <div class="photo-img-wrap"
+             data-gif="events/bestofparty.gif">
+          <img alt=""
+               data-src="events/80-20-beck.jpg">
+        </div>
+        <div class="photo-caption">
+          <span class="caption-name">Event Photography</span>
+          <span class="caption-type">&nbsp;- Page</span>
+          <span class="caption-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="vascorcunha-sports.html">
+        <div class="photo-img-wrap"
+             data-gif="events/bestofsports.gif">
+          <img alt=""
+               data-src="events/agronomia-belem-challenge-2026.jpg">
+        </div>
+        <div class="photo-caption">
+          <span class="caption-name">Rugby Photography</span>
+          <span class="caption-type">&nbsp;- Page</span>
+          <span class="caption-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="vascorcunha-error404.html">
+        <div class="photo-img-wrap">
+          <img alt=""
+               data-src="images/comingsoon.jpg">
+        </div>
+        <div class="photo-caption">
+          <span class="caption-name">Editorial / Retouching</span>
+          <span class="caption-type">&nbsp;- Album</span>
+          <span class="caption-arrow">→</span>
+        </div>
+      </a>
+    </section>
+
+  </main>
+
+  <script src="js-home.js"></script>
+</body>
+</html>
