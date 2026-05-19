@@ -5,7 +5,7 @@
 /* --- Custom fonts --- */
 @font-face {
   font-family: 'Damn';
-  src: url('https://static1.squarespace.com/static/67979e7bf6b3e437c1733abe/t/68e9196cf65a8d5ecb849ff1/1760106860943/DAMN.ttf') format('truetype');
+  src: url('fonts/DAMN.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
