@@ -2,7 +2,7 @@
    ABOUT PAGE — DESKTOP & MOBILE
    ====================== */
 
-/* --- Custom fonts (kept from original) --- */
+/* --- Custom fonts --- */
 @font-face {
   font-family: 'Damn';
   src: url('https://static1.squarespace.com/static/67979e7bf6b3e437c1733abe/t/68e9196cf65a8d5ecb849ff1/1760106860943/DAMN.ttf') format('truetype');
@@ -40,7 +40,7 @@ body {
   overflow-y: hidden; /* no desktop scroll */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* center logo + columns as one block */
+  justify-content: center;
 }
 
 /* Hide Squarespace header/footer (if present) */
@@ -80,7 +80,7 @@ a, button, label { -webkit-tap-highlight-color: transparent; outline: none; }
   align-items: stretch;
   gap: 5%;
   padding: 0 6%;
-  height: 75vh;                    /* fixed height so columns can use height: 100% */
+  height: 75vh;
   overflow: hidden;
   width: 100%;
 }
@@ -92,12 +92,11 @@ a, button, label { -webkit-tap-highlight-color: transparent; outline: none; }
   flex-basis: 28%;
   display: flex;
   flex-direction: column;
-  /* ensure each column fills wrapper height so vertical centering works */
   height: 100%;
   box-sizing: border-box;
 }
 
-/* LEFT & RIGHT: center their *content* both vertically and horizontally */
+/* LEFT & RIGHT: center content vertically and horizontally */
 .about-left,
 .about-right {
   justify-content: center;
@@ -114,7 +113,7 @@ a, button, label { -webkit-tap-highlight-color: transparent; outline: none; }
   padding-top: 0;
 }
 
-/* Column content element (used on each column's inner container) */
+/* Column content element */
 .about-column {
   width: 100%;
   max-width: 420px;
@@ -169,10 +168,9 @@ a, button, label { -webkit-tap-highlight-color: transparent; outline: none; }
   text-transform: uppercase;
   font-size: 4vw;
   letter-spacing: 0.05em;
-  margin: 0 0 0 0;
+  margin: 0;
 }
 
-/* use a class .meta for the smaller lines (replaces invalid <p1>) */
 .meta {
   font-family: "PP Formula", sans-serif;
   font-size: 1.1rem;
@@ -192,22 +190,33 @@ a, button, label { -webkit-tap-highlight-color: transparent; outline: none; }
    MOBILE
    ====================== */
 @media (max-width: 768px) {
-  html, body { overflow-y: auto; height: auto; } /* mobile scroll */
+  html, body {
+    overflow-y: auto;
+    height: auto;
+  }
 
   .about-wrapper {
     flex-direction: column;
-    flex: none;
     height: auto;
     gap: 6vh;
     padding: 0 8vw max(4rem, env(safe-area-inset-bottom));
   }
 
-  .about-column {
+  /* Reset the desktop height that locks columns into side-by-side layout */
+  .about-left,
+  .about-center,
+  .about-right {
+    height: auto;
     flex-basis: auto;
     width: 100%;
-    padding: 0 0;
-    margin: 0 auto;
   }
+
+  .about-center {
+    order: 1;
+    min-height: 76vh;
+  }
+  .about-left  { order: 2; }
+  .about-right { order: 3; }
 
   .logo-wrapper { padding: max(80px, env(safe-area-inset-top)) 0 10px; }
   .logo-wrapper .go-back { font-size: 1rem; }
@@ -218,19 +227,11 @@ a, button, label { -webkit-tap-highlight-color: transparent; outline: none; }
   .about-left h1, .about-right h1 { font-size: 15vw; margin-top: 0; }
   .meta { font-size: 4vw; line-height: 1.3; text-align: center; }
 
-
-  .about-center {
-    order: 1;
-    min-height: 76vh;   
-  }
-  .about-left  { order: 2; }
-  .about-right { order: 3; }
-
-
-  .social-icons a { font-size: 6vw; gap: 20px; }
+  .social-icons a { font-size: 6vw; }
+  .social-icons { gap: 20px; }
 }
 
-/* small screens / very narrow: clamp font sizes to avoid overflow */
+/* Very narrow screens */
 @media (max-width: 420px) {
   .about-left h1, .about-right h1 { font-size: 12vw; }
 }
