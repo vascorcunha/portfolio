@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Title — Portfolio</title>
+  <link rel="stylesheet" href="styles-project.css" />
+</head>
+<body id="top">
+
+  <!-- ============================================== -->
+  <!-- HEADER (logo only, scrolls away with the page) -->
+  <!-- ============================================== -->
+  <header class="topbar">
+    <a href="index.html" class="logo" aria-label="Home">
+  <img src="images/Logo-White.svg" alt="Logo" />
+</a>
+    <!-- Replace the "V" above with an <img> later, e.g.:
+         <a href="index.html" class="logo"><img src="logo.svg" alt="Logo"></a> -->
+  </header>
+
+  <!-- ============================================== -->
+  <!-- HERO: full-screen image, gradient, headline    -->
+  <!-- ============================================== -->
+  <section class="hero">
+    <img class="hero-bg" src="images/h3noponto-1.gif" alt="Hero image" />  
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-headline">H3 NO PONTO</h1>
+        <div class="hero-meta">
+          <span class="hero-tag">H3</span>
+          <span class="hero-year">2025</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- PROJECT INFO: two columns                      -->
+  <!-- Left  = description (left-aligned)             -->
+  <!-- Right = PDF link + credits (right-aligned)     -->
+  <!-- On mobile, right column appears first.         -->
+  <!-- ============================================== -->
+  <section class="project-info">
+    <div class="info-container">
+
+      <div class="info-left">
+        <p>
+          "App H3 Sempre no Ponto" is a campaign aimed at driving deeper engagement with the H3 app among existing users while also attracting new ones.
+        </p>
+        <p>     
+        The central idea hijacks a Portuguese culinary expression,  "no ponto" (perfectly done),  and applies it to the app experience, positioning its features (ordering, rewards, challenges) as the secret to always being at your best.
+        </p>
+        <p>     
+        The concept extended into a three-tier audience segmentation inspired by burger doneness, "bem, médio e mal passados", each brought to life through influencer content tailored to that user profile.
+        </p>
+      </div>
+
+      <div class="info-right">
+        <div class="credits">
+          <p>Art Direction - Vasco R. Cunha</p>
+          <p>Copywriter - Manuel Stock</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- IMAGE GRID                                     -->
+  <!-- Add class="span-two" on <a> to make image      -->
+  <!-- span 2 columns.                                -->
+  <!-- ============================================== -->
+  <section class="grid-section">
+    <div class="image-grid">
+      
+
+      <a href="#img1">
+        <img src="images/h3-noponto-1.jpg" alt="Image 1" />
+      </a>
+
+      <a href="#img2">
+        <img src="images/h3-noponto-2.jpg" alt="Image 2" />
+      </a>
+
+      <a href="#img3">
+        <img src="images/h3-noponto-3.jpg" alt="Image 3" />
+      </a>
+
+      <a href="#img4">
+        <img src="images/h3-noponto-4.jpg" alt="Image 4" />
+      </a>
+
+      <a href="#img5">
+        <img src="images/h3-noponto-5.jpg" alt="Image 5" />
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- BACK TO TOP                                    -->
+  <!-- ============================================== -->
+  <div class="back-to-top">
+    <a href="#top" class="back-to-top-btn">
+      <span class="arrow">↑</span>
+      <span>Back to top</span>
+    </a>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- LIGHTBOX OVERLAYS (one per image)              -->
+  <!-- Pure CSS using :target                         -->
+  <!-- ============================================== -->
+  
+  <div id="img1" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/h3-noponto-1.jpg" alt="Image 1 fullscreen" />
+  </div>
+  <div id="img2" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/h3-noponto-2.jpg" alt="Image 2 fullscreen" />
+  </div>
+  <div id="img3" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/h3-noponto-3.jpg" alt="Image 3 fullscreen" />
+  </div>
+  <div id="img4" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/h3-noponto-4.jpg" alt="Image 4 fullscreen" />
+  </div>
+  <div id="img5" class="popup-overlay">
+    <a href="#" class="close-btn" aria-label="Close">✕</a>
+    <img src="images/h3-noponto-5.jpg" alt="Image 5 fullscreen" />
+  </div>
+   
+
+  <script src="js-project.js"></script>
+</body>
+</html>
