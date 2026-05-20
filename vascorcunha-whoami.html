@@ -1,51 +1,292 @@
-<link rel="stylesheet" href="styles-whoami.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Who Am I — Vasco R. Cunha</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+@font-face {
+  font-family: 'Damn';
+  src: url('fonts/DAMN.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
-<div class="logo-wrapper">
-  <a href="index.html" aria-label="Return to home" class="go-back">GO BACK</a>
-</div>
+@font-face {
+  font-family: 'PP Formula';
+  src: url('fonts/PPFormula-CondensedExtralight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
 
-<div class="about-wrapper">
-  <!-- LEFT COLUMN -->
-  <div class="about-column about-left">
-    <h1>Who am I</h1>
-    <p class="meta">
-      I’m a 23-year-old Art Director / Creative with over 2 years of experience in the advertising world and more than 4 years running my own photography business.
-    </p>
-    <p class="meta">
-I love to work, to create, and to do as much as possible. I want to become the best at what I do, and I want to learn from and work with people who can help me reach my goal.
-    </p>
+@font-face {
+  font-family: 'PP Formula';
+  src: url('fonts/PPFormula-CondensedLightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Formula';
+  src: url('fonts/PPFormula-CondensedBlack.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      font-family: 'PP Formula', system-ui, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ── Hide any Squarespace chrome ── */
+    header, footer,
+    .Header, .Footer,
+    .sqs-header, .sqs-footer,
+    #header, #footer,
+    .site-header, .site-header-wrapper,
+    .site-footer-wrapper {
+      display: none !important;
+    }
+
+    a, button { -webkit-tap-highlight-color: transparent; outline: none; }
+    h1, h2, h3 { font-weight: normal; }
+
+    /* ════════════════════════════
+       PAGE SHELL — desktop: no scroll
+       ════════════════════════════ */
+    .page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      padding: 0 6%;
+    }
+
+    /* ── GO BACK ── */
+    .go-back-wrap {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .go-back {
+      font-family: 'PP Formula', sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      color: #000;
+    }
+
+    /* ════════════════════════════
+       THREE-COLUMN LAYOUT
+       ════════════════════════════ */
+    .cols {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 5%;
+      width: 100%;
+      height: 75vh;
+    }
+
+    .col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100%;
+    }
+
+    .col--center { flex: 1.1; }
+
+    /* ── Text ── */
+    .col h1 {
+      font-family: 'Damn', 'PP Formula', sans-serif;
+      text-transform: uppercase;
+      font-size: 4vw;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+    .meta {
+      font-family: 'PP Formula', sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0.3rem 0;
+    }
+
+    /* ── Center column ── */
+    .profile-img {
+      width: 75%;
+      height: auto;
+      display: block;
+      margin-bottom: 1.2rem;
+      object-fit: contain;
+    }
+    .resume-btn {
+      display: inline-block;
+      padding: 0.7em 1.4em;
+      background: #000;
+      color: #fff;
+      font-family: 'PP Formula', sans-serif;
+      font-size: 0.9vw;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .resume-btn:hover { opacity: 0.75; }
+
+    .social-icons {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 1.2rem;
+    }
+    .social-icons a {
+      color: #000;
+      font-size: 1.8vw;
+      text-decoration: none;
+      transition: color 0.25s, transform 0.25s;
+    }
+    .social-icons a:hover { color: #555; transform: scale(1.1); }
+
+    /* ════════════════════════════
+       MOBILE  ≤ 768 px
+       ════════════════════════════ */
+    @media (max-width: 768px) {
+      .page {
+        height: auto;
+        overflow: visible;
+        justify-content: flex-start;
+        padding: 0;
+      }
+
+      .go-back-wrap {
+        padding-top: max(80px, env(safe-area-inset-top));
+        padding-bottom: 0.6rem;
+      }
+
+      .cols {
+        flex-direction: column;
+        height: auto;
+        gap: 0;
+        width: 100%;
+      }
+
+      /* Reorder: image centre first, then left, then right */
+      .col--left   { order: 2; }
+      .col--center { order: 1; }
+      .col--right  { order: 3; }
+
+      .col {
+        width: 100%;
+        height: auto;
+        padding: 0 8vw;
+      }
+
+      /* Centre section fills most of the first viewport */
+      .col--center {
+        min-height: 80vh;
+        justify-content: center;
+        padding-bottom: 2rem;
+      }
+
+      .col--left,
+      .col--right {
+        padding-top: 6vh;
+        padding-bottom: 6vh;
+      }
+
+      /* last section gets safe-area bottom padding */
+      .col--right {
+        padding-bottom: max(4rem, env(safe-area-inset-bottom));
+      }
+
+      .col h1    { font-size: 15vw; }
+      .meta      { font-size: 4vw; line-height: 1.4; }
+
+      .profile-img { width: 82%; }
+      .resume-btn  { font-size: 3.5vw; padding: 0.85em 2em; }
+
+      .social-icons a { font-size: 6.5vw; }
+      .social-icons   { gap: 1.5rem; margin-top: 1rem; }
+    }
+
+    @media (max-width: 420px) {
+      .col h1 { font-size: 12vw; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="go-back-wrap">
+    <a href="index.html" class="go-back">GO BACK</a>
   </div>
 
-  <!-- CENTER COLUMN -->
-  <div class="about-column about-center">
-    <img src="https://static1.squarespace.com/static/67979e7bf6b3e437c1733abe/t/68ef98f1eef3fa0007f76a13/1760532721787/V-Profile.png" 
-         alt="V Profile"
-         class="main-image">
-    <a href="https://static1.squarespace.com/static/67979e7bf6b3e437c1733abe/t/68f0feaa3a2e670a1b27aa49/1760624299053/CV+Vasco_2026.png" class="resume-btn" aria-label="Download resume">Download CV</a>
+  <div class="cols">
 
-    <!-- Social Icons -->
-    <div class="social-icons" role="navigation" aria-label="social links">
-      <a href="https://www.instagram.com/vascorcunha_photography/" target="_blank" aria-label="Photography Instagram">
-        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/vasco-ribeiro-da-cunha" target="_blank" aria-label="LinkedIn">
-        <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-      </a>
-      <a href="https://www.instagram.com/uncreative.eye/" target="_blank" aria-label="Creative Diary">
-           <i class="fa-solid fa-eye" aria-hidden="true"></i>
-      </a>
+    <!-- LEFT -->
+    <div class="col col--left">
+      <h1>Who am I</h1>
+      <p class="meta">I'm a 23-year-old Art Director / Creative with over 2 years of experience in the advertising world and more than 4 years running my own photography business.</p>
+      <p class="meta">I love to work, to create, and to do as much as possible. I want to become the best at what I do, and I want to learn from and work with people who can help me reach my goal.</p>
     </div>
-  </div>
 
-  <!-- RIGHT COLUMN -->
-  <div class="about-column about-right">
-    <h1>MILESTONES</h1>
-    <p class="meta">2026 - Shortlist - CCP Open Briefing</p>
-    <p class="meta">2025 - Silver - CCP - Print and Outdoor</p>
-    <p class="meta">2025 - 3rd Place - Young Lions PT - Print and Outdoor</p>
-    <p class="meta">2024 - Finalist - Young Lions PT - Print and Outdoor</p>
-    <p class="meta">250+ Photography Events Done</p>
-    <p class="meta">European Rugby Tournament SUB19 Official Photographer</p>
+    <!-- CENTER -->
+    <div class="col col--center">
+      <img
+        src="https://static1.squarespace.com/static/67979e7bf6b3e437c1733abe/t/68ef98f1eef3fa0007f76a13/1760532721787/V-Profile.png"
+        alt="Vasco R. Cunha"
+        class="profile-img"
+        loading="eager"
+        fetchpriority="high"
+        width="600"
+        height="800">
+      <a href="https://static1.squarespace.com/static/67979e7bf6b3e437c1733abe/t/68f0feaa3a2e670a1b27aa49/1760624299053/CV+Vasco_2026.png"
+         class="resume-btn">Download CV</a>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/vascorcunha_photography/" target="_blank" aria-label="Photography Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/vasco-ribeiro-da-cunha" target="_blank" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://www.instagram.com/uncreative.eye/" target="_blank" aria-label="Creative Diary">
+          <i class="fa-solid fa-eye"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="col col--right">
+      <h1>Milestones</h1>
+      <p class="meta">2026 — Shortlist — CCP — Open Brief</p>
+      <p class="meta">2025 — Silver — CCP — Print and Outdoor</p>
+      <p class="meta">2025 — 3rd Place — Young Lions PT — Print and Outdoor</p>
+      <p class="meta">2024 — Finalist — Young Lions PT — Print and Outdoor</p>
+      <p class="meta">250+ Photography Events Done</p>
+      <p class="meta">European Rugby Tournament SUB19 Official Photographer</p>
+    </div>
+
   </div>
 </div>
+
+</body>
+</html>
